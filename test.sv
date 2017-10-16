@@ -1,11 +1,11 @@
 module test;
 
 	// Inputs
-	logic [7:0] A, B;
+	reg [7:0] A, B;
 	
 
 	// Outputs
-	logic compare;
+	reg compare;
 	// Instantiate the Unit Under Test (UUT)
 	top uut (
 		.A(A), 
