@@ -4,7 +4,7 @@ module FA
   output sum, cOut
 );
   
-   assign cOut = (A&B)+(A&cIn)+(B&cIn);
-   assign sum = A^B^cIn;
+   assign cOut = (A&B)+((A^B)&cIn);
+   assign sum = (A^B)^cIn;
 
 endmodule
