@@ -2,7 +2,7 @@ module testCRA;
 
 	// Inputs
 	reg [7:0] A, B;
-	
+	reg cIn;
 
 	// Outputs
 	reg [8:0] sum;
@@ -10,6 +10,7 @@ module testCRA;
 	CRA uut (
 		.A(A), 
 		.B(B), 
+		.cIn(cIn),
 		.sum(sum)
 	);
 
@@ -17,6 +18,7 @@ module testCRA;
 		// Initialize Inputs
 		A = 0;
 		B = 0;
+		cIn = 0;
 		// Wait 100 ns for global reset to finish
 		#100;
         

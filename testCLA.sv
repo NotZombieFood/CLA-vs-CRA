@@ -2,6 +2,7 @@ module testCLA;
 
 	// Inputs
 	reg [7:0] A, B;
+	reg cIn;
 	
 
 	// Outputs
@@ -9,7 +10,8 @@ module testCLA;
 	// Instantiate the Unit Under Test (UUT)
 	CLA uut (
 		.A(A), 
-		.B(B), 
+		.B(B),
+		.cIn(cIn),
 		.sum(sum)
 	);
 
@@ -17,6 +19,7 @@ module testCLA;
 		// Initialize Inputs
 		A = 0;
 		B = 0;
+		cIn = 0;
 		// Wait 100 ns for global reset to finish
 		#100;
         
