@@ -1,4 +1,18 @@
-module DataMemory 
+/*
+            --------------
+            |            |
+            |            |
+      A --->|            |
+            |     FA     |----> cOut
+      B --->|            |----> sum
+            |            |
+    cIn --->|            |-
+            |            |
+            --------------
+
+
+*/
+module FA
 (
   input A,B, cIn
   output sum, cOut
