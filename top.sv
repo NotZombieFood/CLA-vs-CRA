@@ -12,6 +12,6 @@ logic [8:0] sumCRA, sumCLA;
 CRA CRA0(.A(A),.B(B), .cIn(cIn),.sum(sumCRA));
 CLA CLA0(.A(A),.B(B), .cIn(cIn),.sum(sumCLA));
 
-assign compare = sumCLA & sumCRA;
+assign compare = (sumCLA == sumCRA);
 
 endmodule 
