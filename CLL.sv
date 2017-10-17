@@ -7,7 +7,10 @@ module CLL
 
 // Wires
 logic [3:0] P,G;
+logic PG, GG;
 
+assign PG = P[0]&P[1]&P[2]&P[3];
+assign GG = G[3]+(G[2]&P[3])+(P[3]&P[2]&G[1])+(G[0]&P[3]&P[2]&P[1]);
 // Generating
 assign G[0] = A[0]&B[0];
 assign G[1] = A[1]&B[1];
@@ -24,6 +27,6 @@ assign P[3] = A[3]+B[3];
 assign carry[0] = G[0]+(P[0]&cIn);
 assign carry[1] = G[1]+(G[0]&P[1])+(cIn&P[0]&P[1]);
 assign carry[2] = G[2]+(G[1]&P[2])+(G[0]&P[1]&P[2])+(cIn&P[0]&P[1]&P[2]);
-assign carry[3] = G[3]+(G[2]&P[3])+(G[1]&P[2]&P[3])+(G[0]&P[1]&P[2]&P[3])+(cIn&P[0]&P[1]&P[2]&P[3]);
+assign carry[3] = GG + (PG&cIn);
 
 endmodule

@@ -1,7 +1,7 @@
 module test;
 
 	// Inputs
-	reg [7:0] A, B;
+	reg [31:0] A, B;
 	reg cIn;
 
 
@@ -26,27 +26,12 @@ module test;
         
 		// Add stimulus here
 
-		A = 255;
-		B = 122;
+		for(int i =0; i<1000;i++) begin
+		A = $urandom();
+		B = $urandom();
 		#100;
-		
-	
-		A = 12;
-		B = 124;
-		#100;
-		
-		
-		A = 3;
-		B = 10;
-		#100;
-		
-		A = 200;
-		B = 30;
-		#100;
-		
-		A = 23;
-		B = 100;
-		#100;
+ 
+  end
 		
 	end
       
